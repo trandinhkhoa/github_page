@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HELLO PHUONG HAM^</title>
+    <script>
+        let wrongCount = 0;
+
+        function checkPassword() {
+            const inputField = document.getElementById('password');
+            const input = inputField.value;
+            const message = document.getElementById('message');
+            if (input === 'MWMWPH') {
+                message.textContent = 'MuWah MuWah Phuong Ham^ :> Chuc mung 08/03 rat rat rat muon^. Send dung ngay` no xoang` qua =))))';
+                message.style.color = 'green';
+                wrongCount = 0; // Reset on correct input
+            } else {
+                wrongCount++;
+                message.textContent = `SAI SAI SAI + ${wrongCount}`;
+                message.style.color = 'red';
+            }
+            inputField.value = ''; // Clear the input field
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('password-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                checkPassword();
+            });
+        });
+    </script>
+</head>
+<body>
+    <h2>HELLO PHUONG HAM^. P ko doan' dc pass dau :"> No' se~ tu. den^' vs P</h2>
+    <form id="password-form">
+        <!-- <input type="password" id="password" placeholder="Enter Password"> -->
+        <input type="text" id="password" placeholder="Enter Password">
+        <button type="submit">Submit</button>
+    </form>
+    <p id="message"></p>
+</body>
+</html>
