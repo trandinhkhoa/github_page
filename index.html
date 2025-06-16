@@ -1,43 +1,71 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HELLO PHUONG HAM^</title>
-    <script>
-        let wrongCount = 0;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hớp pi bớt đây bạn Pươn !!!</title>
+  <style>
+    #carousel {
+      display: none;
+      overflow-x: auto;
+      white-space: nowrap;
+      margin-top: 20px;
+      max-width: 1;
+      padding-bottom: 10px;
+    }
 
-        function checkPassword() {
-            const inputField = document.getElementById('password');
-            const input = inputField.value;
-            const message = document.getElementById('message');
-            if (input === 'MWMWPH') {
-                message.textContent = 'MuWah MuWah Phuong Ham^ :> Chuc mung 08/03 rat rat rat muon^. Send dung ngay` no xoang` qua =))))';
-                message.style.color = 'green';
-                wrongCount = 0; // Reset on correct input
-            } else {
-                wrongCount++;
-                message.textContent = `SAI SAI SAI + ${wrongCount}`;
-                message.style.color = 'red';
-            }
-            inputField.value = ''; // Clear the input field
-        }
+    .carousel-image {
+      display: inline-block;
+      width: 240px;
+      height: 320px;
+      object-fit: cover;
+      margin-right: 10px;
+      border-radius: 8px;
+    }
+  </style>
+  <script>
+    let wrongCount = 0;
 
-        document.addEventListener('DOMContentLoaded', function() {
-            document.getElementById('password-form').addEventListener('submit', function(event) {
-                event.preventDefault();
-                checkPassword();
-            });
-        });
-    </script>
+    function checkPassword() {
+      const inputField = document.getElementById('password');
+      const input = inputField.value;
+      const message = document.getElementById('message');
+      const carousel = document.getElementById('carousel');
+
+      if (input === 'PhuongHum') {
+        message.textContent = 'Chúc mừng sinh nhật Phương hưm hihi. Mừng bạn đến thế giới lày với anh ⸜(｡˃ ᵕ ˂ )⸝♡ (sến vcc nhưng thui ở xa đành vậy). Trong lúc chờ a về tặng bạn tạm series ảnh hai đứa cười zíp tịp mắt :">. Mong Puon giữ mãi những nụ cười này nha ⸜(｡˃ ᵕ ˂ )⸝♡';
+        message.style.color = 'green';
+        carousel.style.display = 'block';
+        wrongCount = 0;
+      } else {
+        wrongCount++;
+        message.textContent = `SAI SAI SAI + ${wrongCount}`;
+        message.style.color = 'red';
+        carousel.style.display = 'none';
+      }
+      inputField.value = '';
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      document.getElementById('password-form').addEventListener('submit', function (event) {
+        event.preventDefault();
+        checkPassword();
+      });
+    });
+  </script>
 </head>
 <body>
-    <h2>HELLO PHUONG HAM^. P ko doan' dc pass dau :"> No' se~ tu. den^' vs P</h2>
-    <form id="password-form">
-        <!-- <input type="password" id="password" placeholder="Enter Password"> -->
-        <input type="text" id="password" placeholder="Enter Password">
-        <button type="submit">Submit</button>
-    </form>
-    <p id="message"></p>
+  <h2>Hớp pi bớt đây to diu !!</h2>
+  <form id="password-form">
+    <input type="text" id="password" placeholder="Enter Password" />
+    <button type="submit">Submit</button>
+  </form>
+  <p id="message"></p>
+
+  <div id="carousel">
+    <img src="pic1.JPG" class="carousel-image" alt="Image 1" />
+    <img src="pic2.JPG" class="carousel-image" alt="Image 2" />
+    <img src="pic3.JPG" class="carousel-image" alt="Image 3" />
+  </div>
 </body>
 </html>
